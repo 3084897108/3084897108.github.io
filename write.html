@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>写文章 - 冯雨阳的博客</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="blog.html">冯雨阳</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="blog.html">首页</a></li>
+                <li><a href="blog.html">文章</a></li>
+                <li class="categories-dropdown">
+                    <a>分类</a>
+                    <ul class="dropdown-content">
+                        <li><a href="tech.html">技术</a></li>
+                        <li><a href="life.html">生活</a></li>
+                        <li><a href="travel.html">旅行</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">关于</a></li>
+                <li><a href="contact.html">联系</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="write-article">
+            <h1>写文章</h1>
+            <form id="article-form" class="article-editor">
+                <div class="form-group">
+                    <label for="title">文章标题</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">选择分类</label>
+                    <select id="category" name="category" required>
+                        <option value="tech">技术</option>
+                        <option value="life">生活</option>
+                        <option value="travel">旅行</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tags">标签</label>
+                    <div class="tags-input-container">
+                        <div class="tags-list"></div>
+                        <input type="text" id="tags-input" placeholder="输入标签，用逗号分隔">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="content">文章内容</label>
+                    <textarea id="content" name="content" rows="20" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="github-token">GitHub Token (可选)</label>
+                    <input type="password" id="github-token" placeholder="用于发布文章到GitHub">
+                    <small class="form-text">如何获取Token: 
+                        <a href="https://github.com/settings/tokens" target="_blank">GitHub Settings</a> 
+                        → Developer settings → Personal access tokens → Generate new token
+                    </small>
+                </div>
+
+                <div class="preview-toggle">
+                    <button type="button" id="preview-btn">预览</button>
+                </div>
+
+                <div class="article-preview" style="display: none;">
+                    <h2>预览</h2>
+                    <div id="preview-content"></div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">发布文章</button>
+                    <button type="button" class="save-draft-btn">保存草稿</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 冯雨阳. 保留所有权利.</p>
+    </footer>
+
+    <script src="write.js"></script>
+</body>
+</html> 

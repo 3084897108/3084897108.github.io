@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>联系我们 - 我的博客</title>
+    <title>联系 - 冯雨阳的博客</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- 添加背景容器 -->
+    <div class="bg-container"></div>
+    
     <header>
         <nav>
-            <div class="logo">我的博客</div>
+            <div class="logo">
+                <a href="blog.html">冯雨阳</a>
+            </div>
             <ul class="nav-links">
                 <li><a href="blog.html">首页</a></li>
-                <li><a href="blog.html#articles">文章</a></li>
+                <li><a href="blog.html">文章</a></li>
                 <li class="categories-dropdown">
-                    <a href="#categories">分类</a>
+                    <a>分类</a>
                     <ul class="dropdown-content">
-                        <li><a href="#tech">技术</a></li>
-                        <li><a href="#life">生活</a></li>
-                        <li><a href="#travel">旅行</a></li>
+                        <li><a href="tech.html">技术</a></li>
+                        <li><a href="life.html">生活</a></li>
+                        <li><a href="travel.html">旅行</a></li>
                     </ul>
                 </li>
                 <li><a href="about.html">关于</a></li>
@@ -28,55 +33,48 @@
     </header>
 
     <main>
-        <section class="contact-section">
-            <h1>联系我们</h1>
+        <div class="contact-section">
+            <h1>联系我</h1>
             <div class="contact-container">
                 <div class="contact-info">
                     <h2>联系方式</h2>
-                    <p><i class="icon-email"></i> 邮箱：example@email.com</p>
-                    <p><i class="icon-phone"></i> 电话：+86 123 4567 8900</p>
-                    <p><i class="icon-location"></i> 地址：某某市某某区某某街道</p>
-                    
+                    <p>邮箱：vcby2009@gmail.com</p>
                     <div class="social-links">
-                        <h2>社交媒体</h2>
-                        <a href="#" class="social-link">微信</a>
-                        <a href="#" class="social-link">微博</a>
-                        <a href="#" class="social-link">GitHub</a>
+                        <a href="https://github.com/3084897108/-/tree/main" class="social-link" target="_blank">GitHub</a>
+                    </div>
+                    <div class="wechat-container">
+                        <h3>微信：</h3>
+                        <img src="wx12.jpg" alt="微信二维码" class="wechat-qr">
                     </div>
                 </div>
-                
-                <form class="contact-form">
+                <div class="contact-form">
                     <h2>给我留言</h2>
-                    <div class="form-group">
-                        <label for="name">姓名：</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">邮箱：</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="subject">主题：</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">消息：</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">发送消息</button>
-                </form>
+                    <form id="contact-form" onsubmit="return sendEmail(event)">
+                        <div class="form-group">
+                            <label for="name">姓名</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">留言内容</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">发送邮件</button>
+                    </form>
+                    <p class="email-note">点击发送按钮将打开您的默认邮件客户端</p>
+                </div>
             </div>
-        </section>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 我的博客. 保留所有权利.</p>
+        <p>&copy; 2024 冯雨阳. 保留所有权利.</p>
     </footer>
 
+    <script src="script.js"></script>
     <script src="contact.js"></script>
 </body>
 </html> 

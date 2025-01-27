@@ -86,4 +86,71 @@ function loadCategoryPosts() {
 }
 
 // 页面加载完成后执行
-document.addEventListener('DOMContentLoaded', loadCategoryPosts); 
+document.addEventListener('DOMContentLoaded', loadCategoryPosts);
+
+document.addEventListener('DOMContentLoaded', function() {
+    // 加载现有分类到所有页面的导航栏
+    loadCategories();
+    
+    // 处理添加分类表单提交
+    const categoryForm = document.getElementById('category-form');
+    if (categoryForm) {
+        categoryForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const newCategory = {
+                id: Date.now(),
+                name: document.getElementById('category-name').value,
+                slug: document.getElementById('category-name').value.toLowerCase().replace(/\s+/g, '-'),
+                description: document.getElementById('category-description').value
+            };
+            
+            // 保存新分类
+            saveCategory(newCategory);
+            
+            // 重新加载导航栏
+            loadCategories();
+            
+            // 创建新的分类页面
+            createCategoryPage(newCategory);
+            
+            alert('分类添加成功！');
+            window.location.href = `${newCategory.slug}.html`;
+        });
+    }
+});
+
+// 保存分类到 localStorage
+function saveCategory(category) {
+    const categories = getCategories();
+    categories.push(category);
+    localStorage.setItem('blog_categories', JSON.stringify(categories));
+}
+
+// 获取所有分类
+function getCategories() {
+    const categories = localStorage.getItem('blog_categories');
+    return categories ? JSON.parse(categories) : [
+        { id: 1, name: '技术', slug: 'tech', description: '技术相关文章' },
+        { id: 2, name: '生活', slug: 'life', description: '生活随笔' },
+        { id: 3, name: '旅行', slug: 'travel', description: '旅行见闻' }
+    ];
+}
+
+// 加载分类到导航栏
+function loadCategories() {
+    const categories = getCategories();
+    const dropdownContent = document.querySelector('.dropdown-content');
+    if (dropdownContent) {
+        dropdownContent.innerHTML = categories.map(category => `
+            <li><a href="${category.slug}.html">${category.name}</a></li>
+        `).join('');
+    }
+}
+
+// 创建新的分类页面
+function createCategoryPage(category) {
+    // 这里可以通过 GitHub API 创建新的分类页面
+    // 或者提供一个模板让用户手动创建
+    console.log('需要创建新的分类页面:', category);
+} 

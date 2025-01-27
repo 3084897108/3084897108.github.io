@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的博客</title>
+    <title>冯雨阳的博客</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- 添加背景容器 -->
+    <div class="bg-container"></div>
+    
     <header>
         <nav>
-            <div class="logo">我的博客</div>
+            <div class="logo">
+                <a href="blog.html">冯雨阳</a>
+            </div>
             <ul class="nav-links">
-                <li><a href="blog.html">首页</a></li>
-                <li><a href="blog.html">文章</a></li>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="blog.html" class="active">文章</a></li>
                 <li class="categories-dropdown">
                     <a>分类</a>
                     <ul class="dropdown-content">
@@ -28,6 +33,16 @@
     </header>
 
     <main>
+        <!-- 推荐文章部分 -->
+        <section id="featured-posts">
+            <h2>推荐文章</h2>
+            <div class="posts-container">
+                <div class="posts-scroll">
+                    <!-- 推荐文章将通过JavaScript动态加载 -->
+                </div>
+            </div>
+        </section>
+
         <section id="featured-post">
             <h2>最新文章</h2>
             <article class="post" id="article-1">
@@ -39,7 +54,7 @@
                 <p class="post-excerpt">
                     这是文章的摘要内容。点击阅读更多来查看完整文章...
                 </p>
-                <a href="#" class="read-more">阅读更多</a>
+                <a href="article.html?id=1" class="read-more">阅读更多</a>
                 <div class="post-tags">
                     <span class="tag">技术</span>
                     <span class="tag">JavaScript</span>
@@ -55,8 +70,10 @@
         </section>
     </main>
 
+    <a href="write.html" class="floating-write-btn" title="写文章"></a>
+
     <footer>
-        <p>&copy; 2024 我的博客. 保留所有权利.</p>
+        <p>&copy; 2024 冯雨阳. 保留所有权利.</p>
     </footer>
 
     <script src="script.js"></script>

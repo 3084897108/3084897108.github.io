@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>技术 - 冯雨阳的博客</title>
+    <title>添加分类 - 冯雨阳的博客</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,7 +21,7 @@
                 <li class="categories-dropdown">
                     <a>分类</a>
                     <ul class="dropdown-content">
-                        <li><a href="tech.html" class="active">技术</a></li>
+                        <li><a href="tech.html">技术</a></li>
                         <li><a href="life.html">生活</a></li>
                         <li><a href="travel.html">旅行</a></li>
                     </ul>
@@ -33,14 +33,23 @@
     </header>
 
     <main>
-        <div class="category-section">
-            <h1>技术分类</h1>
-            <div class="category-description">
-                <p>这里收录了所有与技术相关的文章，包括编程、开发和计算机科学等内容。</p>
-            </div>
-            <div class="article-list" id="tech-posts">
-                <!-- 文章列表将通过JavaScript动态加载 -->
-            </div>
+        <div class="add-category-section">
+            <h1>添加新分类</h1>
+            <form class="category-form" id="category-form">
+                <div class="form-group">
+                    <label for="category-name">分类名称</label>
+                    <input type="text" id="category-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="category-description">分类描述</label>
+                    <textarea id="category-description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="category-icon">分类图标 (可选)</label>
+                    <input type="file" id="category-icon" accept="image/*">
+                </div>
+                <button type="submit" class="submit-btn">添加分类</button>
+            </form>
         </div>
     </main>
 
@@ -49,5 +58,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="category.js"></script>
 </body>
 </html> 
