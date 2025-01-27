@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章详情 - 我的博客</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">我的博客</div>
+            <ul class="nav-links">
+                <li><a href="blog.html">首页</a></li>
+                <li><a href="blog.html#articles">文章</a></li>
+                <li class="categories-dropdown">
+                    <a href="#categories">分类</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#tech">技术</a></li>
+                        <li><a href="#life">生活</a></li>
+                        <li><a href="#travel">旅行</a></li>
+                    </ul>
+                </li>
+                <li><a href="#about">关于</a></li>
+                <li><a href="#contact">联系</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article id="article-content" class="full-article">
+            <!-- 文章内容将通过JavaScript动态加载 -->
+        </article>
+        
+        <!-- giscus 评论区容器 -->
+        <div class="giscus-container">
+            <script src="https://giscus.app/client.js"
+                data-repo="3084897108/-"
+                data-repo-id="R_kgDOLXGxbw"
+                data-category="Announcements"
+                data-category-id="DIC_kwDOLXGxb84CdYXB"
+                data-mapping="url"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="preferred_color_scheme"
+                data-lang="zh-CN"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async>
+            </script>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 我的博客. 保留所有权利.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

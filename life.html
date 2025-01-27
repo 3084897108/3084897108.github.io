@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生活随笔 - 我的博客</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">我的博客</div>
+            <ul class="nav-links">
+                <li><a href="blog.html">首页</a></li>
+                <li><a href="blog.html#articles">文章</a></li>
+                <li class="categories-dropdown">
+                    <a href="#categories">分类</a>
+                    <ul class="dropdown-content">
+                        <li><a href="tech.html">技术</a></li>
+                        <li><a href="life.html">生活</a></li>
+                        <li><a href="travel.html">旅行</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">关于</a></li>
+                <li><a href="contact.html">联系</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="category-section">
+            <h1>生活随笔</h1>
+            <div class="category-description">
+                <p>这里收录了所有关于生活感悟、日常记录的文章。</p>
+            </div>
+            <div class="posts-grid" id="life-posts">
+                <!-- 文章将通过JavaScript动态加载 -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 我的博客. 保留所有权利.</p>
+    </footer>
+
+    <script src="category.js"></script>
+</body>
+</html> 
